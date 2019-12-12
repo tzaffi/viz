@@ -1,6 +1,6 @@
 # Explore and Visualize 🕵
 
-Constantly improve my Jupyter data exploration and visualization capailities.
+Constantly improve my Jupyter data exploration and visualization capabilities.
 
 ## Cloning
 
