@@ -1,0 +1,35 @@
+version: '3'
+services:
+
+  exploration:
+    image: viz/exploration:1
+    build:
+      context: ./
+      dockerfile: viz/Dockerfile
+      # command: /app/docker-utils/run-app.sh
+    volumes:
+      - ./:/app
+
+   # predict:
+   #   image: docker4data/predict_api:prod-1.0.1
+   #   build:
+   #     context: ./
+   #     dockerfile: predict_api/Dockerfile
+   #   command: /app/docker-utils/run-predict.sh
+   #   volumes:
+   #     - .:/app/proj/
+   #     - static-volume:/app/htdocs/static/
+   #   environment:
+   #     - SITE_DIR=/app/
+   #   depends_on:
+   #     - app
+
+   # db:
+   #   image: postgres:10-alpine
+   #   volumes:
+   #     - pgdata:/var/lib/postgresql/data/
+
+
+volumes:
+  exploration:
+
