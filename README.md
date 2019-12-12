@@ -2,6 +2,10 @@
 
 Constantly improve my Jupyter data exploration and visualization capailities.
 
+## Cloning
+
+Clone from this repo: https://github.com/tzaffi/viz
+
 ## Running locally
 
 To run locally, the following neeed to be installed:
