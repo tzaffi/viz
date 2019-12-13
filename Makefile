@@ -53,7 +53,7 @@ up:
 
 iup:
 	# build and run interactively
-	docker-compose up --build
+	ocker-compose up --build
 
 start:
 	docker-compose start
@@ -83,19 +83,19 @@ wipeout: clean rmi
 
 # rebuild-ui:
 # 	cd frontend && yarn build && cd .. &&  \
-# 	docker-compose restart app
+# 	docker-compose restart exploration
 
-attach: ## Attach to app container
-	docker attach `docker-compose ps -q app`
+attach: ## Attach to exploration container
+	docker attach `docker-compose ps -q exploration`
 
 logs:
-	docker-compose logs -f app
+	docker-compose logs -f exploration
 
 # flask_shell: ## Shell into Flask process
-# 	docker-compose exec app flask konch
+# 	docker-compose exec exploration flask konch
 
 shell: ## Shell into app container
-	docker-compose exec app bash
+	docker-compose exec exploration bash
 
 dbshell: ## Shell into postgres process inside db container
 	docker-compose exec db psql -U postgres
