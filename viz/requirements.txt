@@ -17,5 +17,6 @@ seaborn
 sklearn
 sqlalchemy
 tables
+tqdm
 xlrd
 xlwt
