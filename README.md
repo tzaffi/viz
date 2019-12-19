@@ -34,6 +34,10 @@ To run locally, the following neeed to be installed:
 
 `make help` 
 
+### Re-start all services in interactive mode after stopping:
+
+`make istart`
+
 ### Start all services in interactive mode:
 
 `make iup`
