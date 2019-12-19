@@ -14,23 +14,31 @@ To run locally, the following neeed to be installed:
 * `awk`
 * the `docker` family of applications
 
+### Explore the data in a Jupyter notebook:
+
+#### To re-start the session after exiting from it:
+
+1. Run `make istart` (there should be no need to re-authorize the session)
+2. Navigate to http://localhost:8899
+
+
+#### First time command:
+
+1. Run `make iup` and note the authorization token printed in the logs
+2. Navigate to http://localhost:8899
+3. Paste the authorization token that you copied in step 1 into the text box that appears
+
 ### Available commands:
 
 `make help` 
-
-### Build all services:
-
-`make build`
 
 ### Start all services in interactive mode:
 
 `make iup`
 
-### Explore the data in a Jupyter notebook:
+### Build all services:
 
-1. Run `make iup` and note the authorization token printed in the logs
-2. Navigate to http://localhost:8899
-3. Paste the authorization token that you copied in step 1 into the text box that appears
+`make build`
 
 
 ### Cleaning up
