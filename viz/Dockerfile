@@ -17,7 +17,7 @@ RUN apt-get update && \
 RUN conda install pandas=0.25.1 numpy scipy boto3 ipython
 
 RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r /opt/viz/requirements.txt
+    pip install --no-cache-dir -r /opt/viz/viz/requirements.txt
 
 EXPOSE 8888
 
