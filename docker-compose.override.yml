@@ -1,9 +1,9 @@
-version: '3'
+version: '3.1'
 
 services:
-   exploration:
-     ports:
-       - "8899:8888"
+  exploration:
+    ports:
+      - "8899:8888"
     secrets:
       - aws_config
       - aws_creds

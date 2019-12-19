@@ -53,7 +53,7 @@ up:
 
 iup:
 	# build and run interactively
-	ocker-compose up --build
+	docker-compose up --build
 
 start:
 	docker-compose start
