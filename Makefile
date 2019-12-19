@@ -5,6 +5,7 @@ help:
 	@echo ' make build      build images                                '
 	@echo ' make up         creates containers and starts service       '
 	@echo ' make iup        creates containers and runs interactively   '
+	@echo ' make istart     starts service containers interactively     '
 	@echo ' make start      starts service containers                   '
 	@echo ' make stop       stops service containers                    '
 	@echo ' make down       stops service and removes containers        '
@@ -87,6 +88,8 @@ wipeout: clean rmi
 
 attach: ## Attach to exploration container
 	docker attach `docker-compose ps -q exploration`
+
+istart: start attach
 
 logs:
 	docker-compose logs -f exploration
