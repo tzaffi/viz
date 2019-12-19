@@ -17,6 +17,7 @@ help:
 	@echo ' make dbshell    connect to postgres inside db container     '
 	@echo '                                                             '
 	@echo '                                                             '
+	@echo ' make undangle   delete all dangling docker images           '
 	@echo ' make clean      stop the running containers and remove them '
 	@echo ' make wipeout    like make clean but also removes the images '
 	@echo '                                                             '
@@ -74,6 +75,9 @@ rm:
 # don't delete volumes for now
 # volume-rm:
 # 	docker volume ls | grep 'why-fraud' | awk '{print $$2}' | xargs docker volume rm
+
+undangle:
+	docker rmi -f `docker images -f "dangling=true" -q`
 
 clean:	stop rm #volume-rm
 
