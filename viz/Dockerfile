@@ -1,14 +1,24 @@
-FROM python:3.7
-ENV PATH="/app/.local/bin/:${PATH}"
+FROM continuumio/miniconda3
+RUN conda install jupyter -y --quiet
 
-COPY viz/ /app
-COPY data/ /app/data
+ENV PATH="/opt/conda/bin:${PATH}"
+COPY . /opt/viz
+RUN mkdir /opt/notebooks
 
-WORKDIR /app
+RUN mkdir  ~/.aws ~/.ssh && \
+	ln -s /run/secrets/aws_config ~/.aws/config && \
+	ln -s /run/secrets/aws_creds ~/.aws/credentials && \
+	ln -s /run/secrets/ssh_key ~/.ssh/id_rsa
+
+RUN apt-get update && \
+	apt-get install -y gcc && \
+	apt-get install -y libpq-dev
+
+RUN conda install pandas=0.25.1 numpy scipy boto3 ipython
+
 RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
-
+    pip install --no-cache-dir -r /opt/viz/requirements.txt
 
 EXPOSE 8888
 
-CMD ["jupyter", "notebook", "--ip='*'", "--port=8888", "--no-browser", "--allow-root"]
+CMD ["jupyter", "notebook", "--notebook-dir=/opt/notebooks", "--ip='*'", "--port=8888",  "--no-browser", "--allow-root", "--NotebookApp.iopub_data_rate_limit=10000000"]

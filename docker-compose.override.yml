@@ -4,3 +4,27 @@ services:
    exploration:
      ports:
        - "8899:8888"
+    secrets:
+      - aws_config
+      - aws_creds
+      - ssh_key
+    environment:
+      # define environment variables in ".env" file of the context directory
+      - SSHPROXY=${SSHPROXY}
+      - SSHUSER=${SSHUSER}
+      - ADWHOST=${ADWHOST}
+      - ADWUSER=${ADWUSER}
+      - ADWPSWD=${ADWPSWD}
+      - ADWNAME=${ADWNAME}
+      - DBHOST_REPLICA=${DBHOST_REPLICA}
+      - DBPASS_REPLICA=${DBPASS_REPLICA}
+      - DBNAME_REPLICA=${DBNAME_REPLICA}
+      - DBUSERNAME_REPLICA=${DBUSERNAME_REPLICA}
+
+secrets:
+  aws_config:
+    file: ~/.aws/config
+  aws_creds:
+    file: ~/.aws/credentials
+  ssh_key:
+    file: ~/.ssh/id_rsa
