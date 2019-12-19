@@ -18,12 +18,14 @@ To run locally, the following neeed to be installed:
 
 #### To re-start the session after exiting from it:
 
+0. `cd` into the top level of this git repo
 1. Run `make istart` (there should be no need to re-authorize the session)
 2. Navigate to http://localhost:8899
 
 
 #### First time command:
 
+0. `cd` into the top level of this git repo
 1. Run `make iup` and note the authorization token printed in the logs
 2. Navigate to http://localhost:8899
 3. Paste the authorization token that you copied in step 1 into the text box that appears
