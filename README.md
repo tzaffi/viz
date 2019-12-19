@@ -6,13 +6,20 @@ Constantly improve my Jupyter data exploration and visualization capabilities.
 
 Clone from this repo: https://github.com/tzaffi/viz
 
-## Running locally
+## Running Locally with Docker
 
 To run locally, the following neeed to be installed:
 
 * `make`
 * `awk`
 * the `docker` family of applications
+
+and the following configurations need to have been set:
+
+* **aws** configurations under `~/.ssh/` with private key file `~/.ssh/id_rsa`
+* **ssh** configurations under `~/.aws/`
+* **database** and **ssh proxy** variables set in `../.env`
+
 
 ### Explore the data in a Jupyter notebook:
 
